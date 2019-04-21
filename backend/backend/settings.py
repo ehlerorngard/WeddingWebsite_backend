@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECRET_KEY = os.environ.get(DJANGO_SECRET_KEY)
-SECRET_KEY = '*uxqzsoee&$mf%4svik0q0dbev@im1pv080#&e5d1c!1!38i+8'
+SECRET_KEY = ''
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'orngard_website_db',
         'USER': 'ehlerorngard',
-        'PASSWORD': 'ilusion',
+        'PASSWORD': '',
         # 'NAME': os.environ.get('DATABASE_NAME', ''),
         # 'USER': os.environ.get('DATABASE_USER', ''),
         # 'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
