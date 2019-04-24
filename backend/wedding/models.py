@@ -26,7 +26,7 @@ class Rsvp(models.Model):
 		return going + self.id
 
 class Invitee(models.Model):
-	firstName = models.CharField(max_length=28)
+	firstName = models.CharField(max_length=28, blank=True, null=True)
 	lastName = models.CharField(max_length=30, null=True, blank=True)
 	email = models.CharField(max_length=60, null=True, blank=True)
 	mobileNumber = models.CharField(max_length=14, null=True, blank=True)
