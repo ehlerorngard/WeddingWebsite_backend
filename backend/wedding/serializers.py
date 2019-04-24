@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Invitee, Rsvp, Task
+from .models import Invitee, Rsvp#, Task
 
 # specify fields to be converted to JSON:
 
@@ -13,7 +13,7 @@ class RsvpSerializer(serializers.ModelSerializer):
     model = Rsvp
     fields = ('attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'otherNames', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'needTent', 'needPad', 'needSleepingBag', 'submitted', 'lastUpdated')
 
-class TaskSerializer(serializers.ModelSerializer):
-  class Meta:
-    model = Task
-    fields = ('summary', 'description', 'category', 'day', 'duration', 'startTime', 'endTime', 'idealTotalNumWorkers', 'numWorkersNeeded', 'volunteers')
+# class TaskSerializer(serializers.ModelSerializer):
+#   class Meta:
+#     model = Task
+#     fields = ('summary', 'description', 'category', 'day', 'duration', 'startTime', 'endTime', 'idealTotalNumWorkers', 'numWorkersNeeded', 'volunteers')
