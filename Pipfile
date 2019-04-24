@@ -9,7 +9,8 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
-corsheaders = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"
