@@ -1,23 +1,33 @@
 from django.shortcuts import render
 from rest_framework import viewsets    
-from .serializers import InviteeSerializer, RsvpSerializer#, TaskSerializer
-from .models import Invitee, Rsvp#, Task               
+from .serializers import InviteeSerializer, RsvpSerializer, MessageSerializer
+from .models import Invitee, Rsvp, Message               
 
-class InviteeView(viewsets.ModelViewSet): 
-  serializer_class = InviteeSerializer    
-  queryset = Invitee.objects.all()
+# class InviteeView(viewsets.ModelViewSet): 
+#  	serializer_class = InviteeSerializer    
+#  	queryset = Invitee.objects.all()
 
 class RsvpView(viewsets.ModelViewSet): 
-  serializer_class = RsvpSerializer    
-  queryset = Rsvp.objects.all()
+	serializer_class = RsvpSerializer    
+	queryset = Rsvp.objects.all()
 
-# class TaskView(viewsets.ModelViewSet): 
-#   serializer_class = TaskSerializer    
-#   queryset = Task.objects.all()
+class InviteeView(viewsets.ModelViewSet):
+	serializer_class = InviteeSerializer
+
+	def get_queryset(self):
+		queryset = Invitee.objects.all()
+		rsvp = self.request.query_params.get('rsvp', None)
+		if rsvp is not None:
+			queryset = queryset.filter(rsvp=rsvp) # queryset = queryset.filter(rsvp__id=rsvp)
+		return queryset
+
+class MessageView(viewsets.ModelViewSet): 
+	serializer_class = MessageSerializer    
+	queryset = Message.objects.all()
 
 
 
-# for enabling of CSRF tokens
+# for enabling requests via CSRF tokens:
 from django.http import JsonResponse
 from django.middleware.csrf import get_token
 
