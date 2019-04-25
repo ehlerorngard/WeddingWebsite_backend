@@ -1,16 +1,16 @@
 from django.contrib import admin
-from .models import Invitee, Rsvp#, Task
+from .models import Invitee, Rsvp, Message
 
 class InviteeAdmin(admin.ModelAdmin): 
 	list_display = ('firstName', 'lastName', 'email', 'mobileNumber', 'rsvpSubmitted', 'rsvp')
 
 class RsvpAdmin(admin.ModelAdmin): 
-	list_display = ('attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'othersNames', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'needTent', 'needPad', 'needSleepingBag', 'submitted', 'lastUpdated')
+	list_display = ('attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'needTent', 'needPad', 'needSleepingBag', 'submitted', 'dateCreated','lastUpdated')
 
-# class TaskAdmin(admin.ModelAdmin): 
-# 	list_display = ('summary', 'description', 'category', 'day', 'duration', 'startTime', 'endTime', 'idealTotalNumWorkers', 'numWorkersNeeded')
+class MessageAdmin(admin.ModelAdmin): 
+	list_display = ('firstName', 'lastName', 'email', 'message', 'dateCreated')
 
 # Register models here:
 admin.site.register(Invitee, InviteeAdmin)
 admin.site.register(Rsvp, RsvpAdmin)
-# admin.site.register(Task, TaskAdmin)
+admin.site.register(Message, MessageAdmin)

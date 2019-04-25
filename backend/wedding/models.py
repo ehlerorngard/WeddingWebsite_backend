@@ -6,7 +6,6 @@ class Rsvp(models.Model):
 	numInviteesAlotted = models.IntegerField(null=True, blank=True)
 	numAdults = models.IntegerField(null=True, blank=True)
 	numChildren = models.IntegerField(null=True, blank=True)
-	othersNames = models.CharField(max_length=120, blank=True)
 	arrivalDay = models.CharField(max_length=10, blank=True)
 	departureDay = models.CharField(max_length=10, null=True, blank=True)
 	volunteeringToHelp = models.BooleanField(default=False, blank=True)
@@ -30,25 +29,21 @@ class Invitee(models.Model):
 	lastName = models.CharField(max_length=30, null=True, blank=True)
 	email = models.CharField(max_length=60, null=True, blank=True)
 	mobileNumber = models.CharField(max_length=14, null=True, blank=True)
+	zipCode = models.CharField(max_length=10, null=True, blank=True)
 	rsvpSubmitted = models.BooleanField(default=False, blank=True)
 	rsvp = models.ForeignKey(Rsvp, default=None, null=True, blank=True, on_delete=models.CASCADE)
 
 	def _str_(self):
 		return self.firstName
 
-# class Task(models.Model):
-# 	summary = models.CharField(max_length=80)
-# 	description = models.CharField(max_length=400)
-# 	category = models.CharField(max_length=60)
-# 	day = models.CharField(max_length=10)
-# 	duration = models.IntegerField()
-# 	startTime = models.TimeField()
-# 	endTime = models.TimeField()
-# 	idealTotalNumWorkers = models.IntegerField()
-# 	numWorkersNeeded = models.IntegerField()
-# 	volunteers = models.ManyToManyField(Invitee)
+class Message(models.Model):
+	firstName = models.CharField(max_length=80)
+	lastName = models.CharField(max_length=30, null=True, blank=True)
+	email = models.CharField(max_length=60, null=True, blank=True)
+	message = models.CharField(max_length=800, null=True, blank=True)
+	dateCreated = models.DateTimeField(auto_now_add=True)
 
-# 	def _str_(self):
-# 		return self.summary
+	def _str_(self):
+		return self.message
 
 
