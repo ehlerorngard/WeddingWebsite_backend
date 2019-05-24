@@ -1,1 +1,1 @@
-web: gunicorn --chdir backend backend.wsgi:application
+web: gunicorn --pythonpath backend backend.wsgi:application
