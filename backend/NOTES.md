@@ -15,3 +15,6 @@ This app is purely a API to connect the orngard.com domain frontend with a backe
 ### Static files (CSS, JavaScript, Images)
 ### https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+### WSGI configuration
+### https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
+
