@@ -1,1 +1,1 @@
-web: gunicorn -w 3 -b 0.0.0.0:8080 /backend/backend
+web: gunicorn --chdir backend backend.wsgi:application
