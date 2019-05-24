@@ -1,1 +1,1 @@
-web: gunicorn PATH=$PATH:backend/ backend.wsgi:application
+web: gunicorn backend.backend.wsgi:application
