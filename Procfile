@@ -1,1 +1,1 @@
-web: python3 backend/backend/manage.py run_gunicorn
+web: gunicorn backend.backend.wsgi:application —-log-file -
