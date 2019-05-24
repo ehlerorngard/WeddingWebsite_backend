@@ -4,12 +4,14 @@ import psycopg2
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
 # CONNECT to the postgres database using a uri and psycopg2:
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
