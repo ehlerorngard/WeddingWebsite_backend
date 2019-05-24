@@ -1,1 +1,1 @@
-web: gunicorn backend.backend.wsgi:application
+web: python3 manage.py run_gunicorn
