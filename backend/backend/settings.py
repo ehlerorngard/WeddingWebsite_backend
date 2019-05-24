@@ -2,6 +2,7 @@ import os
 import psycopg2
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
@@ -127,7 +128,8 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 # added due to SECURITY WARNINGS:
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SESSION_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_SSL_REDIRECT = True
 X_FRAME_OPTIONS = 'DENY'
-
+SECURE_HSTS_SECONDS = 60
