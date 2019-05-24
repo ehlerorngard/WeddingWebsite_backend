@@ -1,22 +1,24 @@
 from django.db import models
 
 class Rsvp(models.Model):
-	attending = models.BooleanField(default=False)
+	attending = models.BooleanField(default=False, null=True, blank=True)
 	lodging = models.CharField(max_length=56, null=True, blank=True)
 	numInviteesAlotted = models.IntegerField(null=True, blank=True)
 	numAdults = models.IntegerField(null=True, blank=True)
 	numChildren = models.IntegerField(null=True, blank=True)
-	arrivalDay = models.CharField(max_length=10, blank=True)
+	arrivalDay = models.CharField(max_length=10, null=True, blank=True)
 	departureDay = models.CharField(max_length=10, null=True, blank=True)
-	volunteeringToHelp = models.BooleanField(default=False, blank=True)
+	volunteeringToHelp = models.BooleanField(default=False, null=True, blank=True)
 	numVeg = models.IntegerField(null=True, blank=True)
 	numNoDairy = models.IntegerField(null=True, blank=True)
 	numNoGluten = models.IntegerField(null=True, blank=True)
+	FridayDinner = models.BooleanField(default=False, null=True, blank=True)
+	SaturdayBreakfast = models.BooleanField(default=False, null=True, blank=True)
+	SaturdayLunch = models.BooleanField(default=False, null=True, blank=True)
+	SaturdayDinner = models.BooleanField(default=False, null=True, blank=True)
+	SundayBrunch = models.BooleanField(default=False, null=True, blank=True)
 	additionalNotes = models.CharField(max_length=600, null=True, blank=True)
-	needTent = models.BooleanField(default=False)
-	needPad = models.BooleanField(default=False)
-	needSleepingBag = models.BooleanField(default=False)
-	submitted = models.BooleanField(default=False)
+	submitted = models.BooleanField(default=False, null=True, blank=True)
 	dateCreated = models.DateTimeField(auto_now_add=True)
 	lastUpdated = models.DateTimeField(auto_now=True)
 
@@ -30,7 +32,8 @@ class Invitee(models.Model):
 	email = models.CharField(max_length=60, null=True, blank=True)
 	mobileNumber = models.CharField(max_length=14, null=True, blank=True)
 	zipCode = models.CharField(max_length=10, null=True, blank=True)
-	rsvpSubmitted = models.BooleanField(default=False, blank=True)
+	attending = models.BooleanField(default=False, null=True, blank=True)
+	rsvpSubmitted = models.BooleanField(default=False, null=True, blank=True)
 	rsvp = models.ForeignKey(Rsvp, default=None, null=True, blank=True, on_delete=models.CASCADE)
 
 	def _str_(self):

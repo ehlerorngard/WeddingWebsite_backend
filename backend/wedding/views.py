@@ -3,9 +3,6 @@ from rest_framework import viewsets
 from .serializers import InviteeSerializer, RsvpSerializer, MessageSerializer
 from .models import Invitee, Rsvp, Message               
 
-# class InviteeView(viewsets.ModelViewSet): 
-#  	serializer_class = InviteeSerializer    
-#  	queryset = Invitee.objects.all()
 
 class RsvpView(viewsets.ModelViewSet): 
 	serializer_class = RsvpSerializer    

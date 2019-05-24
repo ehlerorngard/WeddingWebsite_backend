@@ -2,10 +2,10 @@ from django.contrib import admin
 from .models import Invitee, Rsvp, Message
 
 class InviteeAdmin(admin.ModelAdmin): 
-	list_display = ('firstName', 'lastName', 'email', 'mobileNumber', 'rsvpSubmitted', 'rsvp')
+	list_display = ('firstName', 'lastName', 'email', 'mobileNumber', 'zipCode', 'attending', 'rsvpSubmitted', 'rsvp')
 
 class RsvpAdmin(admin.ModelAdmin): 
-	list_display = ('attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'needTent', 'needPad', 'needSleepingBag', 'submitted', 'dateCreated','lastUpdated')
+	list_display = ('attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'FridayDinner', 'SaturdayBreakfast', 'SaturdayLunch', 'SaturdayDinner', 'SundayBrunch', 'additionalNotes', 'submitted', 'dateCreated','lastUpdated')
 
 class MessageAdmin(admin.ModelAdmin): 
 	list_display = ('firstName', 'lastName', 'email', 'message', 'dateCreated')
