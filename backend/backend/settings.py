@@ -109,13 +109,13 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'https://www.orngard.com'
+STATIC_URL = 'https://www.orngard.com/'
 
 
 # MY RECENT ADDITIONS:
-CORS_ORIGIN_WHITELIST = ['localhost:3000', 'www.orngard.com']
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'https://www.orngard.com']
 
-CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'https://www.orngard.com']
 
 # Marked True, will only send a CSRF token to a secure (https) location
 CSRF_COOKIE_SECURE = True
