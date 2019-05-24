@@ -6,12 +6,12 @@ from .models import Invitee, Rsvp, Message
 class InviteeSerializer(serializers.ModelSerializer):
   class Meta:
     model = Invitee
-    fields = ('id', 'firstName', 'lastName', 'email', 'mobileNumber', 'rsvpSubmitted', 'rsvp')
+    fields = ('id', 'firstName', 'lastName', 'email', 'mobileNumber', 'zipCode', 'attending', 'rsvpSubmitted', 'rsvp')
 
 class RsvpSerializer(serializers.ModelSerializer):
   class Meta:
     model = Rsvp
-    fields = ('id', 'attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'needTent', 'needPad', 'needSleepingBag', 'submitted', 'dateCreated','lastUpdated')
+    fields = ('id', 'attending', 'lodging', 'numInviteesAlotted', 'numAdults', 'numChildren', 'arrivalDay', 'departureDay', 'volunteeringToHelp', 'numVeg', 'numNoDairy', 'numNoGluten', 'additionalNotes', 'FridayDinner', 'SaturdayBreakfast', 'SaturdayLunch', 'SaturdayDinner', 'SundayBrunch', 'submitted', 'dateCreated','lastUpdated')
 
 class MessageSerializer(serializers.ModelSerializer):
   class Meta:
