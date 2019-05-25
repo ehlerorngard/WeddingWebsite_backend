@@ -28,7 +28,7 @@ STATIC_URL = 'https://www.orngard.com/'
 # MY RECENT ADDITIONS:
 CORS_ORIGIN_WHITELIST = ['https://www.orngard.com', 'https://orngard.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.orngard.com', 'https://orngard.com']
+CSRF_TRUSTED_ORIGINS = ['www.orngard.com', 'orngard.com']
 
 # Ensures the CSRF cookies is sent from a secure (https) location
 CSRF_COOKIE_SECURE = False
@@ -47,8 +47,6 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_REPLACE_HTTPS_REFERER = True
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 # to decipher the DATABASE_URL into a format Django can read
 import dj_database_url
