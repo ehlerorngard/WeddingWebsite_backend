@@ -30,8 +30,8 @@ CORS_ORIGIN_WHITELIST = ['https://www.orngard.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://www.orngard.com']
 
-# Marked True, will only send a CSRF token to a secure (https) location
-CSRF_COOKIE_SECURE = True
+# Ensures the CSRF cookies is sent from a secure (https) location
+CSRF_COOKIE_SECURE = False
 
 # to decipher the DATABASE_URL into a format Django can read
 import dj_database_url
@@ -40,9 +40,9 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 
 # added due to SECURITY WARNINGS:
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SESSION_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = False
+SESSION_COOKIE_SECURE = False
+SECURE_BROWSER_XSS_FILTER = False
 SECURE_SSL_REDIRECT = False
 X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_SECONDS = 60
