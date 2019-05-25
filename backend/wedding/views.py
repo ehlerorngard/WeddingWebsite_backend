@@ -32,7 +32,7 @@ def csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
 
 def ping(request):
-	print('{|==[__]==|} PING REQUEST: ', request)
+    print('{|==[__]==|} PING REQUEST: ', request)
     return JsonResponse({'result': 'OK'})
 
 
