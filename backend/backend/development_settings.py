@@ -6,7 +6,7 @@ import psycopg2
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'www.orngard.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'orngard.com']
 
 
 # Database
@@ -59,3 +59,5 @@ CORS_EXPOSE_HEADERS = [
     'csrftoken',
     'x-csrftoken',
 ]
+
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'

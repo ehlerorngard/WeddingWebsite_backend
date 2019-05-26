@@ -25,6 +25,8 @@ DATABASES = {
 STATIC_URL = 'https://www.orngard.com/'
 
 
+CORS_ORIGIN_ALLOW_ALL = False
+
 """
 As of v3.0.0 (May 2019) whitelisted CORS origins must include 
 a scheme ('http://' or 'https://') as well as hostname:
@@ -66,4 +68,8 @@ SECURE_SSL_REDIRECT = False
 X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_SECONDS = 60
 
-CORS_ORIGIN_ALLOW_ALL = True
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
