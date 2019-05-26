@@ -1,3 +1,8 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 
-# Create your tests here.
+c = Client(enforce_csrf_checks=True)
+
+response = c.get('/csrf/', {})
+print(response.data)
+
+

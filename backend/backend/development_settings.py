@@ -31,6 +31,20 @@ CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'https://www.orngard.com']
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'https://www.orngard.com']
 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'referer',
+    'user-agent',
+    'x-csrftoken',
+    'x-csrf-token',
+    'csrftoken',
+    'x-requested-with',
+]
 
 SECURE_SSL_REDIRECT = False
 HOST_SCHEME = "http://"
