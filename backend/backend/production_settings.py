@@ -11,7 +11,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.orngard.com']
+ALLOWED_HOSTS = ['.orngard.com']
 
 # Database
 DATABASES = {
@@ -41,7 +41,6 @@ CSRF_COOKIE_SECURE = False
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
-    'access-control-allow-origin',
     'authorization',
     'content-type',
     'dnt',
