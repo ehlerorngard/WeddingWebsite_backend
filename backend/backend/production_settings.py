@@ -51,6 +51,12 @@ CORS_ALLOW_HEADERS = [
     'x-csrf-token',
     'csrftoken',
     'x-requested-with',
+    'Access-Control-Request-Headers',
+    'Access-Control-Request-Method',
+    'host',
+    'connection',
+    'cookie',
+    'accept-language',
 ]
 
 
@@ -66,10 +72,10 @@ SESSION_COOKIE_SECURE = False
 SECURE_BROWSER_XSS_FILTER = False
 SECURE_SSL_REDIRECT = False
 X_FRAME_OPTIONS = 'DENY'
-SECURE_HSTS_SECONDS = 60
+# SECURE_HSTS_SECONDS = 60
 
 
 # Don't need since I'm not using cookies for authentication:
 # CORS_ALLOW_CREDENTIALS = True
 
-CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+# CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
