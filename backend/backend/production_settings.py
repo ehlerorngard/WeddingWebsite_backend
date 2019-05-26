@@ -31,7 +31,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 As of v3.0.0 (May 2019) whitelisted CORS origins must include 
 a scheme ('http://' or 'https://') as well as hostname:
 """
-CORS_ORIGIN_WHITELIST = ['https://orngard.com']
+CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'localhost:3000']
 
 CSRF_TRUSTED_ORIGINS = ['orngard.com']
 
@@ -57,7 +57,7 @@ CORS_ALLOW_HEADERS = [
 
 # to decipher the DATABASE_URL into a format Django can read
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
 
 # added due to SECURITY WARNINGS:
