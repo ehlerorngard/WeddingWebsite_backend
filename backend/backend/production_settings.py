@@ -80,7 +80,7 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 # Enable XSS filter in the browser, and force it to always block suspected XSS attacks:
-SECURE_BROWSER_XSS_FILTER = True
+SECURE_BROWSER_XSS_FILTER = False
 
 # Redirect all non-HTTPS requests to HTTPS
 SECURE_SSL_REDIRECT = True
