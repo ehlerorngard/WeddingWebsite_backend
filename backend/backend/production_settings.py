@@ -26,14 +26,6 @@ STATIC_URL = 'https://www.orngard.com/'
 
 
 
-"""
-As of v3.0.0 (May 2019) whitelisted CORS origins must include 
-a scheme ('http://' or 'https://') as well as hostname:
-"""
-CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
-# CORS_ORIGIN_ALLOW_ALL = True
-
-CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com']
 
 
 CORS_ALLOW_CREDENTIALS = True
@@ -93,3 +85,13 @@ CSRF_COOKIE_NAME = 'csrftoken'
 # CORS_ALLOW_CREDENTIALS = True
 
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+
+
+"""
+As of v3.0.0 (May 2019) whitelisted CORS origins must include 
+a scheme ('http://' or 'https://') as well as hostname:
+"""
+CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
+# CORS_ORIGIN_ALLOW_ALL = True
+
+CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com']
