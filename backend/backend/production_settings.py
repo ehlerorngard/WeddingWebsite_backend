@@ -102,7 +102,7 @@ X_FRAME_OPTIONS = 'DENY'
 As of django-cors-headers v3.0.0 (May 2019), whitelisted CORS origins 
 must include a scheme ('http://' or 'https://') as well as hostname:
 """
-CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
+CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'https://www.orngard.com', 'http://localhost:3000']
 
-CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com', 'orngard.com']
+CSRF_TRUSTED_ORIGINS = ['orngard.com', 'www.orngard.com', 'localhost:3000']
 
