@@ -7,6 +7,11 @@ DEBUG = False
 
 
 # –––––– Database –––––––
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    }
+}
 
 # Connect to the postgres database using a uri and psycopg2:
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
