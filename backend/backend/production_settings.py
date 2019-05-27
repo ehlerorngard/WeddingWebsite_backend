@@ -64,6 +64,9 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 # added due to SECURITY WARNINGS:
 
 SESSION_COOKIE_SAMESITE = None
+CRSF_COOKIE_SAMESITE = None
+
+
 SECURE_CONTENT_TYPE_NOSNIFF = False
 SESSION_COOKIE_SECURE = False
 SECURE_BROWSER_XSS_FILTER = False
