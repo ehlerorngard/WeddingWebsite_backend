@@ -94,14 +94,15 @@ CSRF_USE_SESSIONS = False
 # True would disallow csrf cookies in a response (anything other than in HTTP)
 CSRF_COOKIE_HTTPONLY = False
 
-# Only send session cookies to https:
-SESSION_COOKIE_SECURE = False
+# Allow browsers to ensure that the cookie is only sent under an HTTPS connection:
+SESSION_COOKIE_SECURE = True
 
 SECURE_CONTENT_TYPE_NOSNIFF = False
 
 # Enable XSS filter in the browser, and force it to always block suspected XSS attacks:
 SECURE_BROWSER_XSS_FILTER = True
 
+# Redirect all non-HTTPS requests to HTTPS
 SECURE_SSL_REDIRECT = False
 
 X_FRAME_OPTIONS = 'DENY'
