@@ -29,12 +29,11 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 import os
 
-def check_ping():
-    hostname = "localhost"
-    if os.environ.get('MODE') == 'production':
-    	hostname = 'orngard.herokuapp.com'
+def check_ping(request):
+    hostname = request.get_host()
+
     response = os.system("ping -c 1 " + hostname)
-    # and then check the response...
+
     if response == 0:
         pingstatus = "Network Active"
     else:
@@ -46,7 +45,7 @@ def csrf(request):
     return JsonResponse({'csrftoken': get_token(request)})
 
 def ping(request):
-    print('PING NETWORK CHECK: ', check_ping())
+    print('PING NETWORK CHECK: ', check_ping(request))
     return JsonResponse({'result': 'OK'})
 
 
