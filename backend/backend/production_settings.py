@@ -37,6 +37,13 @@ STATIC_URL = 'https://www.orngard.com/'
 # Allow the web server host:
 ALLOWED_HOSTS = ['orngard.herokuapp.com']
 
+"""
+As of django-cors-headers v3.0.0 (May 2019), whitelisted CORS origins 
+must include a scheme ('http://' or 'https://') as well as hostname:
+"""
+CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'https://www.orngard.com', 'http://localhost:3000']
+
+CSRF_TRUSTED_ORIGINS = ['orngard.com', 'www.orngard.com', 'localhost:3000']
 
 # Allow these headers on the request
 CORS_ALLOW_HEADERS = [
@@ -97,12 +104,4 @@ CSRF_COOKIE_HTTPONLY = False
 SECURE_CONTENT_TYPE_NOSNIFF = False
 
 X_FRAME_OPTIONS = 'DENY'
-
-"""
-As of django-cors-headers v3.0.0 (May 2019), whitelisted CORS origins 
-must include a scheme ('http://' or 'https://') as well as hostname:
-"""
-CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'https://www.orngard.com', 'http://localhost:3000']
-
-CSRF_TRUSTED_ORIGINS = ['orngard.com', 'www.orngard.com', 'localhost:3000']
 
