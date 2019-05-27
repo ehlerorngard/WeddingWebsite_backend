@@ -1,7 +1,7 @@
 # Notes 
 ## about the the API for orngard.com and about Django generally
 
-This app is purely a API to connect the orngard.com domain frontend with a backend and relational database.
+This app is purely an API to connect the orngard.com domain frontend with a backend and relational database.
 
 ### Database
 ### https://docs.djangoproject.com/en/2.2/ref/settings/#databases

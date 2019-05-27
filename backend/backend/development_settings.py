@@ -2,14 +2,11 @@ import os
 import psycopg2
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Debug only here in development
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'orngard.com']
-
-
-# Database
+# ––––– Database –––––
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -26,11 +23,15 @@ DATABASES = {
 STATIC_URL = 'https://www.orngard.com/'
 
 
-# MY RECENT ADDITIONS:
+# Specify permitted origins and hosts for the the cross-origin connection:
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'orngard.herokuapp.com']
+
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'https://orngard.com']
 
 CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'orngard.com']
 
+
+# Permitted request headers
 CORS_ALLOW_HEADERS = [
     'accept',
     'access-control-request-headers',
@@ -38,43 +39,34 @@ CORS_ALLOW_HEADERS = [
     'accept-encoding',
     'accept-language',
     'authorization',
-    'cache',
     'connection',
     'content-type',
     'cookie',
-    'csrftoken',
     'date',
     'dnt',
     'host',
     'origin',
     'referer',
-    'server',
     'user-agent',
     'vary',
     'x-csrftoken',
-    'x-csrf-token',
     'x-requested-with',
 ]
 
-SESSION_COOKIE_SAMESITE = None
-SECURE_SSL_REDIRECT = False
-HOST_SCHEME = "http://"
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_HSTS_SECONDS = None
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_FRAME_DENY = False
-CORS_REPLACE_HTTPS_REFERER = False
-
-CORS_EXPOSE_HEADERS = [
-    'csrftoken',
-    'x-csrftoken',
-]
-
+CORS_ALLOW_CREDENTIALS = True
 CSRF_USE_SESSIONS = False
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_SECURE = False
+CORS_REPLACE_HTTPS_REFERER = False
+CORS_EXPOSE_HEADERS = [
+    'x-csrftoken',
+]
 
-CORS_ALLOW_CREDENTIALS = True
-
-# CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = False
+HOST_SCHEME = "http://"
+SECURE_HSTS_SECONDS = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_FRAME_DENY = False

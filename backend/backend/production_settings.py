@@ -2,18 +2,19 @@ import os
 import psycopg2
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Turn of debugging in production:
 DEBUG = False
 
 
 # –––––– Database –––––––
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
     }
 }
 
-# Connect to the postgres database using a uri and psycopg2:
+# Connect to heroku's postgres database using a uri and psycopg2:
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
@@ -23,12 +24,15 @@ import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
-# Static files (CSS, JavaScript, Images) 
+
+# –––––– Static files (CSS, JavaScript, Images) ––––––
+
 # (I'm not actually needing to serve static files from the backend.)
 STATIC_URL = 'https://www.orngard.com/'
 
 
-# –––––– Connections –––––––
+
+# –––––– Network Connections –––––––
 
 # Allow the web server host:
 ALLOWED_HOSTS = ['orngard.herokuapp.com']

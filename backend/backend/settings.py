@@ -54,18 +54,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    { 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
 
 
@@ -81,8 +73,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-
-# IMPORT OTHER SETTINGS
+#  –––––––––––––––––––––––––––––––––––––––––––––––
+# –––––– PRODUCTION / DEVEVLOPMENT SETTINGS –––––––
+#  –––––––––––––––––––––––––––––––––––––––––––––––
 if os.environ.get('MODE') == 'production':
     from .production_settings import *
 else: 

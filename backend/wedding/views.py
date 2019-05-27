@@ -32,7 +32,7 @@ import os
 def check_ping():
     hostname = "localhost"
     if os.environ.get('MODE') == 'production':
-    	hostname = 'orngard.com'
+    	hostname = 'orngard.herokuapp.com'
     response = os.system("ping -c 1 " + hostname)
     # and then check the response...
     if response == 0:
