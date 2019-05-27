@@ -35,6 +35,10 @@ CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
 
 CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'orngard.com']
 
+
+CORS_ALLOW_CREDENTIALS = True
+
+
 # Ensures the CSRF cookies is sent from a secure (https) location
 CSRF_COOKIE_SECURE = False
 
