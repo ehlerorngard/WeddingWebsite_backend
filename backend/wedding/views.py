@@ -24,22 +24,9 @@ class MessageView(viewsets.ModelViewSet):
 
 
 
-# for enabling requests via CSRF tokens:
+# for enabling requests with CSRF tokens:
 from django.http import JsonResponse
 from django.middleware.csrf import get_token
-import os
-
-def check_ping(request):
-    hostname = request.get_host()
-
-    response = os.system("ping -c 1 " + hostname)
-
-    if response == 0:
-        pingstatus = "Network Active"
-    else:
-        pingstatus = "Network Error"
-
-    return pingstatus
 
 def csrf(request):
     return JsonResponse({'csrftoken': get_token(request)})
@@ -47,5 +34,3 @@ def csrf(request):
 def ping(request):
     print('PING NETWORK CHECK: ', check_ping(request))
     return JsonResponse({'result': 'OK'})
-
-
