@@ -11,7 +11,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.orngard.com']
+ALLOWED_HOSTS = ['.orngard.com', 'orngard.com', 'orngard.herokuapp.com']
 
 # Database
 DATABASES = {
