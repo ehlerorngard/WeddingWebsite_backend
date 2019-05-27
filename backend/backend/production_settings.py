@@ -51,21 +51,16 @@ CORS_ALLOW_HEADERS = [
     'accept-encoding',
     'accept-language',
     'authorization',
-    'cache',
     'connection',
     'content-type',
     'cookie',
-    'csrftoken',
-    'date',
     'dnt',
     'host',
     'origin',
     'referer',
     'server',
     'user-agent',
-    'vary',
     'x-csrftoken',
-    'x-csrf-token',
     'x-requested-with',
 ]
 
@@ -91,7 +86,7 @@ CSRF_COOKIE_NAME = 'csrftoken'
 
 CSRF_USE_SESSIONS = False
 
-# True would disallow csrf cookies in a response (anything other than in HTTP)
+# True would disallow csrf cookies in a response (/ in anything other than in HTTP)
 CSRF_COOKIE_HTTPONLY = False
 
 # Allow browsers to ensure that the cookie is only sent under an HTTPS connection:
@@ -103,6 +98,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = False
 SECURE_BROWSER_XSS_FILTER = True
 
 # Redirect all non-HTTPS requests to HTTPS
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = True
 
 X_FRAME_OPTIONS = 'DENY'
