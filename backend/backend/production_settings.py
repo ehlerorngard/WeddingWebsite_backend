@@ -92,4 +92,4 @@ a scheme ('http://' or 'https://') as well as hostname:
 CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000', 'https://www.orngard.com']
 # CORS_ORIGIN_ALLOW_ALL = True
 
-CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com']
+CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'www.orngard.com', 'orngard.com']
