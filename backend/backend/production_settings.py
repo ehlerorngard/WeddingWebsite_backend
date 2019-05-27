@@ -31,7 +31,7 @@ As of v3.0.0 (May 2019) whitelisted CORS origins must include
 a scheme ('http://' or 'https://') as well as hostname:
 """
 CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'orngard.com']
 
