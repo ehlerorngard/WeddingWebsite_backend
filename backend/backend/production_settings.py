@@ -33,7 +33,7 @@ a scheme ('http://' or 'https://') as well as hostname:
 CORS_ORIGIN_WHITELIST = ['https://orngard.com', 'http://localhost:3000']
 CORS_ORIGIN_ALLOW_ALL = True
 
-CSRF_TRUSTED_ORIGINS = ['orngard.com']
+CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'orngard.com']
 
 # Ensures the CSRF cookies is sent from a secure (https) location
 CSRF_COOKIE_SECURE = False
