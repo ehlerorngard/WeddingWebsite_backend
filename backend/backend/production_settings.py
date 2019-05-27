@@ -40,27 +40,27 @@ CSRF_COOKIE_SECURE = False
 
 CORS_ALLOW_HEADERS = [
     'accept',
+    'access-control-request-headers',
+    'access-control-request-method',
     'accept-encoding',
     'accept-language',
     'authorization',
+    'cache',
     'connection',
     'content-type',
+    'cookie',
+    'csrftoken',
+    'date',
     'dnt',
     'host',
     'origin',
     'referer',
+    'server',
     'user-agent',
+    'vary',
     'x-csrftoken',
     'x-csrf-token',
-    'csrftoken',
     'x-requested-with',
-    'Access-Control-Request-Headers',
-    'Access-Control-Request-Method',
-
-    'cookie',
-    'server',
-    'date',
-    'vary',
 ]
 
 
@@ -71,6 +71,7 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 
 # added due to SECURITY WARNINGS:
 
+SESSION_COOKIE_SAMESITE = None
 SECURE_CONTENT_TYPE_NOSNIFF = False
 SESSION_COOKIE_SECURE = False
 SECURE_BROWSER_XSS_FILTER = False
