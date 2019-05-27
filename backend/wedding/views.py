@@ -43,7 +43,7 @@ def check_ping():
     return pingstatus
 
 def csrf(request):
-    return JsonResponse({'csrfToken': get_token(request)})
+    return JsonResponse({'csrftoken': get_token(request)})
 
 def ping(request):
     print('PING NETWORK CHECK: ', check_ping())
