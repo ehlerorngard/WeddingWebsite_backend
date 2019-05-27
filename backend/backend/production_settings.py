@@ -27,10 +27,6 @@ STATIC_URL = 'https://www.orngard.com/'
 
 
 
-
-CORS_ALLOW_CREDENTIALS = True
-
-
 # Ensures the CSRF cookies is sent from a secure (https) location
 CSRF_COOKIE_SECURE = True
 
@@ -84,7 +80,7 @@ CSRF_COOKIE_NAME = 'csrftoken'
 
 
 # Don't need since I'm not using cookies for authentication:
-# CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = True
 
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
