@@ -4,18 +4,9 @@ import psycopg2
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
-# IMPORT OTHER SETTINGS
-if os.environ.get('MODE') == 'production':
-    from .production_settings import *
-else: 
-    from .development_settings import *
 
-
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,25 +48,25 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-
 # Password validation
-# AUTH_PASSWORD_VALIDATORS = [
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# ]
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
 
 
 # Internationalization
@@ -88,3 +79,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+
+# IMPORT OTHER SETTINGS
+if os.environ.get('MODE') == 'production':
+    from .production_settings import *
+else: 
+    from .development_settings import *
