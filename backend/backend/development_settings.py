@@ -33,25 +33,30 @@ CSRF_TRUSTED_ORIGINS = ['localhost:3000', 'orngard.com']
 
 CORS_ALLOW_HEADERS = [
     'accept',
+    'access-control-request-headers',
+    'access-control-request-method',
     'accept-encoding',
+    'accept-language',
     'authorization',
+    'cache',
+    'connection',
     'content-type',
+    'cookie',
+    'csrftoken',
+    'date',
     'dnt',
+    'host',
     'origin',
     'referer',
+    'server',
     'user-agent',
+    'vary',
     'x-csrftoken',
     'x-csrf-token',
-    'csrftoken',
     'x-requested-with',
-    'Access-Control-Request-Headers',
-    'Access-Control-Request-Method',
-    'host',
-    'connection',
-    'cookie',
-    'accept-language',
 ]
 
+SESSION_COOKIE_SAMESITE = None
 SECURE_SSL_REDIRECT = False
 HOST_SCHEME = "http://"
 SESSION_COOKIE_SECURE = False
@@ -69,5 +74,7 @@ CORS_EXPOSE_HEADERS = [
 CSRF_USE_SESSIONS = False
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_NAME = 'csrftoken'
+
+CORS_ALLOW_CREDENTIALS = True
 
 # CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
