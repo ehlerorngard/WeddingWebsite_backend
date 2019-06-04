@@ -13,7 +13,11 @@ class InviteeView(viewsets.ModelViewSet):
 
 	def get_queryset(self):
 		queryset = Invitee.objects.all()
+
+		# Check to see if "?rsvp=" is included in the query parameters:
 		rsvp = self.request.query_params.get('rsvp', None)
+
+		# If an RSVP id is included, filter invitees by their foreign key "rsvp":
 		if rsvp is not None:
 			queryset = queryset.filter(rsvp=rsvp) # queryset = queryset.filter(rsvp__id=rsvp)
 		return queryset
