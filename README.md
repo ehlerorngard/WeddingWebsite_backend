@@ -5,14 +5,14 @@ This app is an API which serves database data to orngard.com.
 More specifically at present it takes and stores users' RSVPs and data from the wedding website hosted at orngard.com.
 
 It is built with Python using the Django framework and a Postgres database.
-
-
-*Check out the the frontend repo:* **[frontend](https://github.com/ehlerorngard/orngard.com)**
-
-*View and try out the website:* **[orngard.com/ehlerandemily](https://www.orngard.com/ehlerandemily)**
-<br />*Feel free to try out the RSVP (select RSVP from the menu sidebar)*
-
 <br />
+
+#### *Check out the the frontend repo:* **[frontend](https://github.com/ehlerorngard/orngard.com)**
+
+#### *View and try out the website:* **[orngard.com/ehlerandemily](https://www.orngard.com/ehlerandemily)**
+<br />*Feel free to try out the RSVP (select RSVP from the menu sidebar)*
+<br /><br />
+
 ## code excerpts 
 
 ### urls.py
