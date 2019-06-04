@@ -10,9 +10,9 @@ It is built with Python using the Django framework and a Postgres database.
 *Check out the the frontend repo:* **[frontend](https://github.com/ehlerorngard/orngard.com)**
 
 *View and try out the website:* **[orngard.com/ehlerandemily](https://www.orngard.com/ehlerandemily)**
-*Feel free to try out the RSVP (select RSVP from the menu sidebar)*
+<br />*Feel free to try out the RSVP (select RSVP from the menu sidebar)*
 
-<br /><br />
+<br />
 ## code excerpts 
 
 ### urls.py
